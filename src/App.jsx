@@ -16,7 +16,7 @@ function App() {
             path: '',
             element: <LayOut />,
             children: [
-                { path: 'home', element: <Home /> }, // Main components
+                { index: true, element: <Home /> }, // Main components
                 { path: 'booking', element: <Booking /> },
                 { path: 'cart', element: <Cart /> },
                 { path: 'about-us', element: <AboutUs /> },
@@ -24,7 +24,7 @@ function App() {
             ],
         },
         // Routes outside the main layout
-        { index: true, element: <SignIn /> },
+        { path:"signin", element: <SignIn /> },
         { path: 'signup', element: <SignUp /> },
     ]);
 
