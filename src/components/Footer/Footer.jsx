@@ -2,14 +2,14 @@ import React from 'react'
 
 export default function Footer() {
   return (
-      <footer className="bg-black text-white py-8">
+      <footer className="bg-black text-white py-8 absolute bottom-0 left-0 right-0">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
 
           <div>
             <h2 className="font-pacifico text-2xl mb-4">Car Wash</h2>
           </div>
 
-          {/* Page Links */}
+
           <div>
             <h3 className="font-bold mb-4">PAGE</h3>
             <ul className="space-y-2 text-gray-400">
@@ -21,7 +21,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Car Links */}
+
           <div>
             <h3 className="font-bold mb-4">CAR</h3>
             <ul className="space-y-2 text-gray-400">
@@ -33,7 +33,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services and Contact */}
+
           <div>
             <h3 className="font-bold mb-4">SERVICES</h3>
             <ul className="space-y-2 text-gray-400 mb-4">
