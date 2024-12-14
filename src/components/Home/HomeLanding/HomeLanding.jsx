@@ -10,16 +10,16 @@ export default function HomeLanding() {
   return (
     <>
       <header className="overflow-hidden bg-hero min-h-lvh">
-        <div className="container mx-auto px-3 text-white mt-40 relative z-2 flex justify-between items-center max-lg:flex-col gap-10 max-lg:text-center">
+        <div className="w-[85%] mx-auto mx-md:w-[95%] px-3 text-white mt-40 relative z-2 flex justify-between items-center max-lg:flex-col gap-10 max-lg:text-center">
           <div className="w-1/2 max-lg:w-full">
             <h1 className="text-[5rem] font-heading leading-none mb-8 font-semibold">
               The shine that lasts
               <p className="text-main">Forever.</p>
             </h1>
             <p className="mb-10 text-[1.1rem] w-[80%] max-lg:w-full">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s
+            we are committed to providing your vehicle with the best care it deserves. <br/>
+                      Our expert team uses high-quality products and modern techniques to ensure that your car is
+                      spotless, inside and out.
             </p>
             <button className="bg-main  w-[18rem] rounded-lg">
               <NavLink to="/cart" className="py-5 block">

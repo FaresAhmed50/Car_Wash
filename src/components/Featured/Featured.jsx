@@ -11,12 +11,12 @@ export default function Featured() {
   return (<>
 
   <section className='bg-black'>
-    <div className='container mx-auto py-[5rem] px-3 grid gap-6 grid-cols-4 max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3' >
+    <div className='w-[85%] mx-auto mx-md:w-[95%] py-[5rem] px-3 grid gap-6 grid-cols-4 max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3' >
       
-        <FeatureCard imgSrc={snowflake} title= "Safety Materials" text="Cras aliquam tristique metus, eu gravida diam vestibulum gravida."/>
-        <FeatureCard imgSrc={avatar} title= "Contactless Washing" text="Vestibulum tortor risus, rutrum at congue sed ultricies finibus."/>
-        <FeatureCard imgSrc={windSun} title= "Modern Equipment" text="Fusce maximus molestie nisl, ut dapibus libero vestibulum aliquam."/>
-        <FeatureCard imgSrc={wind} title= "Extensive Cleanings" text="Sestibulum non dolor sit amet mi moles tincidunt vel non velit."/>
+        <FeatureCard imgSrc={snowflake} title= "Safety Materials" text="We use eco-friendly, and materials to protect your car and environment."/>
+        <FeatureCard imgSrc={avatar} title= "Contactless Washing" text="Advanced technology ensures spotless cleaning without scratching."/>
+        <FeatureCard imgSrc={windSun} title= "Modern Equipment" text="Our state-of-the-art machines guarantee efficient cleaning results."/>
+        <FeatureCard imgSrc={wind} title= "Extensive Cleanings" text="From carpets to crevices, every inch of your car gets attention."/>
         
 
     </div>

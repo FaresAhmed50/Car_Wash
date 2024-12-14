@@ -3,20 +3,23 @@ import registerImage from "../../../assets/images/register.jpg";
 export default function ProfessionalWashing() {
   return (
     <section className="bg-black text-white  py-[5rem]">
-      <div className="container mx-auto flex justify-between items-center gap-16 max-lg:flex-col px-3">
+      <div className="w-[85%] mx-auto mx-md:w-[95%] flex justify-between items-center gap-16 max-lg:flex-col px-3">
         <div className="w-1/2 max-lg:w-full max-lg:order-2">
           <h2 className="text-[3rem] font-[900] w-[90%] max-lg:text-[2rem] mb-5">
             Professional Washing And Cleaning.
           </h2>
           <p className="mb-5">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus
+            Whether you’re looking for a quick wash, a full-service detailing,
+            or a specialized treatment, we’ve got you covered. Our services
+            include exterior washing, waxing, interior cleaning, engine
+            cleaning, and more, all designed to keep your vehicle looking brand
+            new.
           </p>
 
           <p className="mb-9">
-            mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-            sem. Nulla consequat massa quis enim.
+            We pride ourselves on offering fast, efficient, and eco-friendly
+            solutions, so you can drive away with a gleaming car every time.
+            Book your appointment today and let us take care of the rest!
           </p>
           <div className="flex gap-4 flex-wrap">
             <button className="bg-main py-2  rounded-md w-[12rem]">

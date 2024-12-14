@@ -44,8 +44,8 @@ export default function Payment() {
   };
 
   return (
-    <div>
-      <section className="py-8 antialiased bg-black md:py-16 mt-5">
+    <div className='overflow-hidden'>
+      <section className="py-8 antialiased bg-black pt-32 ">
         <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
           <div className="mx-auto max-w-5xl border-[0.5px] rounded-2xl bg-card-dark p-10 border-gray-400">
             <h2 className="text-xl font-semibold text-white sm:text-2xl">Payment</h2>

@@ -9,8 +9,19 @@ import SignUp from "./components/SignUp/SignUp.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 import Booking from './components/Booking/Booking.jsx';
 import Payment from './components/Payment/Payment.jsx';
+import { initFlowbite } from 'flowbite';
+import { useEffect } from 'react';
+
 
 function App() {
+
+
+
+    useEffect(() => {
+        initFlowbite();
+    },[]);
+
+
     const Routes = createBrowserRouter([
         // Routes for the main layout
         {

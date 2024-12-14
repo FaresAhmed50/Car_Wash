@@ -4,20 +4,17 @@ export default function DryCleaning() {
   return (
     <>
       <section className="py-[5rem] text-white">
-        <div className="container mx-auto flex justify-between items-center gap-16 max-lg:flex-col px-3">
+        <div className="w-[85%] mx-auto mx-md:w-[95%] flex justify-between items-center gap-16 max-lg:flex-col px-3">
           <div className="w-1/2 max-lg:w-full max-lg:order-2">
             <h2 className="text-[3rem] font-[900] w-[90%] mb-5 max-lg:text-[2.5rem]">
               Dry Cleaning Any Dirt Inside The Car.
             </h2>
             <p className="mb-5">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus
+            Ensure your car’s interior is spotless with our professional dry cleaning service. We meticulously remove dust, dirt, and stains from every surface, leaving your vehicle looking and feeling brand new.
             </p>
 
             <p className="mb-9">
-              mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-              quis, sem. Nulla consequat massa quis enim.
+            Experience unparalleled cleanliness and attention to detail, making your car a comfortable and hygienic space.
             </p>
 
             <button className="py-3  w-[12rem] rounded-md border ">

@@ -4,7 +4,7 @@ import React from 'react'
 export default function Footer() {
   return (
       <footer className="bg-black text-white py-8 px-3">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-sm">
+        <div className="w-[85%] mx-auto max-md:w-[95%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-sm">
 
         
 
