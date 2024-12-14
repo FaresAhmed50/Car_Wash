@@ -13,7 +13,7 @@
 
 .bg-hero
 {
- /*background-image: url(assets/images/Hero.jpg);*/
+ background-image: url(assets/images/Hero.jpg);
  position: relative;
 }
 .bg-hero::before

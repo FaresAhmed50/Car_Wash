@@ -24,11 +24,11 @@ export default function Navbar() {
                       </li>
 
                       <li>
-                          <NavLink className={`font-bold`} to={'cart'}>Booking</NavLink>
+                          <NavLink className={`font-bold`} to={'booking'}>Booking</NavLink>
                       </li>
 
                       <li>
-                          <NavLink className={`font-bold`} to={'products'}>About US</NavLink>
+                          <NavLink className={`font-bold`} to={'cart'}>About US</NavLink>
                       </li>
 
                   </ul>
