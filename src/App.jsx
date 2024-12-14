@@ -3,11 +3,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LayOut from "./components/LayOut/LayOut.jsx";
 import SignIn from "./components/SignIn/SignIn.jsx";
 import Home from "./components/Home/Home.jsx";
-import Booking from "./components/Booking/Booking.jsx";
 import Cart from "./components/Cart/Cart.jsx";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import SignUp from "./components/SignUp/SignUp.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
+import Booking from './components/Booking/Booking.jsx';
 
 function App() {
     const Routes = createBrowserRouter([
