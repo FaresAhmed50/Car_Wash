@@ -14,18 +14,24 @@ export default function SignIn() {
 
  
 
-  function handleSubmit()
-  {
-  
-    for(let i = 0;i<users.length;i++)
-    {
-      if(email == users[i].email && users[i].password == password)
-      {
-        navigate("/");
-        localStorage.setItem("isLogged",true);
-      }
-    }
+  function handleSubmit(e) {
+    e.preventDefault();
 
+    const user = users.find(
+      (u) => u.email === email && u.password === password
+    );
+
+    if (user) {
+      // Save the current user in localStorage
+      localStorage.setItem("currentUser", JSON.stringify(user));
+      localStorage.setItem("isLogged", "true");
+
+      
+      navigate("/");
+    } else {
+    
+      alert("Invalid email or password. Please try again.");
+    }
   }
 
   return (
