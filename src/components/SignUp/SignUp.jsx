@@ -1,7 +1,7 @@
 import React from "react";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import registerImage from "../../assets/images/register.png";
+// import registerImage from "../../assets/images/register.png";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/Logo.png";
 
