@@ -1,3 +1,40 @@
 @tailwind base;
  @tailwind components;
  @tailwind utilities;
+
+
+ :root
+ {
+    --main-color:#FF013E;
+    --font-heading:"Playfair Display", serif;
+    --font-content: "Roboto", sans-serif;
+    
+ }
+
+ body
+ {
+  font-family: var(--font-content);
+ }
+
+ 
+ .text-main
+ {
+  color: var(--main-color);
+ }
+ .bg-main
+ {
+  background-color: var(--main-color);
+ }
+ .border-color-main
+ {
+  border-color: var(--main-color);
+ }
+ .font-heading
+ {
+  font-family: var(--font-heading);
+
+ }
+ .font-content
+ {
+  font-family: var(--font-content);
+ }
