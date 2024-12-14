@@ -1,12 +1,13 @@
 import React from 'react'
+import logo from "../../assets/images/Logo.png";
 
 export default function Footer() {
   return (
-      <footer className="bg-black text-white py-8 ">
+      <footer className="bg-black text-white py-8">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
 
-          <div>
-            <h2 className="font-pacifico text-2xl mb-4">Car Wash</h2>
+          <div className="z-3 relative w-[8rem] py-7">
+            <img className="w-full" src={logo} alt="Logo"/>
           </div>
 
 

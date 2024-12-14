@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BookingCard from "../BookingCards/BookingCard.jsx";
-
 
 export default function Booking() {
   const plans = [
@@ -70,63 +69,109 @@ export default function Booking() {
       buttonHoverBgColor: "hover:bg-green-500",
     },
   ];
-  
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const cartKey = currentUser ? `cart_${currentUser.id}` : null;
 
-  // adding to cart logic
+  if (!cartKey) {
+    console.error("No valid user. Unable to manage the cart.");
+  }
 
-  const dummyUser = { id: "12345", name: "Test User",email:"examole@gmail.com", cart:[] };
-  // using dummy user till the user logic done 
-  const user = JSON.parse(localStorage.getItem("user")) || dummyUser;
-  const cartKey=`cart_${user.id}`
-  //====
-  // helper functions to be moved 
+  const loadCart = () => {
+    try {
+      const storedCart = JSON.parse(localStorage.getItem(cartKey));
+      return (
+        storedCart || {
+          items: [],
+          totalPrice: 0,
+        }
+      );
+    } catch (error) {
+      console.error("Error loading cart data:", error);
+      return {
+        items: [],
+        totalPrice: 0,
+      };
+    }
+  };
 
-  const loadCart = () => JSON.parse(localStorage.getItem(cartKey)) || [];
   const saveCart = (cart) => {
-    localStorage.setItem(cartKey, JSON.stringify(cart));
+    try {
+      localStorage.setItem(cartKey, JSON.stringify(cart));
+    } catch (error) {
+      console.error("Error saving cart data:", error);
+    }
   };
+
   const clearCart = () => {
-    localStorage.removeItem(cartKey);
+    try {
+      localStorage.removeItem(cartKey);
+    } catch (error) {
+      console.error("Error clearing cart data:", error);
+    }
   };
-    
 
-  //============
-  const [cart , setCart]=useState(loadCart());
+  const [cart, setCart] = useState({
+    items: [],
+    totalPrice: 0,
+  });
 
+  useEffect(() => {
+    setCart(loadCart());
+  }, []);
 
   const handleSelect = (plan) => {
     const currentCart = loadCart();
-    const updatedCart=[...currentCart];
-    const existingPlanIndex=updatedCart.findIndex((item)=>item.title===plan.title);
-    if(existingPlanIndex!==-1){
-      updatedCart[existingPlanIndex].quantity+=1;
+    const updatedCart = { ...currentCart };
 
+    const existingPlanIndex = updatedCart.items.findIndex(
+      (item) => item.title === plan.title
+    );
+
+    if (existingPlanIndex !== -1) {
+      updatedCart.items[existingPlanIndex].quantity += 1;
+    } else {
+      updatedCart.items.push({ ...plan, quantity: 1 });
     }
-    else{
-      updatedCart.push({...plan,quantity:1})
-    }
-    setCart(updatedCart)
+
+    // Recalculate totalPrice
+    updatedCart.totalPrice = updatedCart.items.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+
+    setCart(updatedCart);
     saveCart(updatedCart);
-    console.log("cart updated",updatedCart);
-    
+    console.log("Updated cart:", updatedCart);
   };
 
   return (
-   <section className="pt-12">
-     <div className="flex flex-wrap items-center justify-center gap-6  bg-black py-8">
-      {plans.map((plan, index) => (
-        <BookingCard
-          key={index}
-          price={plan.price}
-          billingCycle={plan.billingCycle}
-          title={plan.title}
-          features={plan.features}
-          highlightColor={plan.highlightColor}
-          buttonHoverBgColor={plan.buttonHoverBgColor}
-          onSelect={() => handleSelect(plan)}
-        />
-      ))}
-    </div>
-   </section>
+    <section className="pt-12">
+      <div className="flex flex-wrap items-center justify-center gap-6 bg-black py-8">
+        {plans.map((plan, index) => (
+          <BookingCard
+            key={index}
+            price={plan.price}
+            billingCycle={plan.billingCycle}
+            title={plan.title}
+            features={plan.features}
+            highlightColor={plan.highlightColor}
+            buttonHoverBgColor={plan.buttonHoverBgColor}
+            onSelect={() => handleSelect(plan)}
+          />
+        ))}
+      </div>
+      <div className="mt-8 text-white text-center">
+        <h2>Cart Summary</h2>
+        <p>Total Price: ${cart.totalPrice}</p>
+        <ul>
+          {cart.items.map((item, index) => (
+            <li key={index}>
+              {item.title} - {item.quantity} x ${item.price} = $
+              {item.quantity * item.price}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }

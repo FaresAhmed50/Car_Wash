@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert';
 
 export default function Payment() {
-  const cartKey = `cart_${localStorage.getItem("user.id") || "12345"}`;
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const cartKey = currentUser ? `cart_${currentUser.id}` : null;
+
   const { totalPrice } = JSON.parse(localStorage.getItem(cartKey));
 
   const [formValues, setFormValues] = useState({

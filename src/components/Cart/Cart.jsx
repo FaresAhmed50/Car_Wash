@@ -9,7 +9,8 @@ export default function Cart() {
   });
 
 
-  const cartKey = `cart_${localStorage.getItem("user.id") || "12345"}`;
+  const currentUser = JSON.parse(localStorage.getItem("currentUser")); 
+  const cartKey = currentUser ? `cart_${currentUser.id}` : `NONE`;
 
   // Load the cart data
   useEffect(() => {
@@ -112,13 +113,13 @@ export default function Cart() {
                       <dt className="text-base font-normal text-gray-400">
                         Tax
                       </dt>
-                      <dd className="text-base font-medium text-white">{cart.totalPrice*0.05}</dd>
+                      <dd className="text-base font-medium text-white">{(cart.totalPrice*0.05).toFixed(2)}</dd>
                     </dl>
                   </div>
                   <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
                     <dt className="text-base font-bold text-white">Total</dt>
                     <dd className="text-base font-bold text-white">
-                      {cart.totalPrice + (cart.totalPrice*0.05)} $
+                      {(cart.totalPrice + (cart.totalPrice*0.05)).toFixed(2)} $
                     </dd>
                   </dl>
                 </div>

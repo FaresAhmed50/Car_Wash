@@ -11,6 +11,10 @@
     --font-content: "Roboto", sans-serif;
  }
 
+ .row{
+     @apply flex flex-row flex-wrap;
+ }
+
 .bg-hero
 {
  background-image: url(assets/images/Hero.jpg);
@@ -33,7 +37,7 @@
  body
  {
   font-family: var(--font-content);
-  background-color: black;
+
  }
 
  
