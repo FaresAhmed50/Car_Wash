@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Navbar() {
   return (
-      <nav className={' bg-transparent py-6'}>
+      <nav className={'bg-transparent py-6 fixed top-0 left-0 right-0 z-10 text-white'}>
           <div className={`container mx-auto flex flex-row items-center justify-around align-middle `}>
 
 
