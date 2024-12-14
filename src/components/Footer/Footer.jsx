@@ -1,14 +1,12 @@
 import React from 'react'
-import logo from "../../assets/images/Logo.png";
+
 
 export default function Footer() {
   return (
-      <footer className="bg-black text-white py-8">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+      <footer className="bg-black text-white py-8 px-3">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-sm">
 
-          <div className="z-3 relative w-[8rem] py-7">
-            <img className="w-full" src={logo} alt="Logo"/>
-          </div>
+        
 
 
           <div>
@@ -46,13 +44,13 @@ export default function Footer() {
             </ul>
 
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a target='_blank' href="#" className="text-gray-400 hover:text-white">
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a target='_blank' href="#" className="text-gray-400 hover:text-white">
                 <i className="fab fa-facebook"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a target='_blank' href="#" className="text-gray-400 hover:text-white">
                 <i className="fab fa-twitter"></i>
               </a>
             </div>

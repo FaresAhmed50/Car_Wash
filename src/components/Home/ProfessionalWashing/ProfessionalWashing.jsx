@@ -1,5 +1,5 @@
 import React from "react";
-import registerImage from "../../../assets/images/register.webp";
+import registerImage from "../../../assets/images/register.jpg";
 export default function ProfessionalWashing() {
   return (
     <section className="bg-black text-white  py-[5rem]">
