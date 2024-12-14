@@ -27,12 +27,13 @@ function App() {
                 {path: 'about-us', element : <AboutUs/> },
 
                 //Regester routeing
-                {path : 'signin', element : <SignIn /> },
+                {path : 'signing', element : <SignIn /> },
                 {path : 'sighup' , element: <SignUp/>},
 
 
+
                 //Not Found page
-                {path: '' , element: <NotFound/>}
+                {path: '*' , element: <NotFound/>}
 
 
 
