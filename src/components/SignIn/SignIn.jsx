@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/images/Logo.png";
-
+import { Link } from "react-router-dom";
 
 export default function SignIn() {
   return (
@@ -17,7 +17,6 @@ export default function SignIn() {
               <p className="text-[1.6rem]">Enter your credentials below.</p>
             </div>
             <form action="" className="flex flex-col gap-4">
-         
               <div className="flex flex-col gap-2">
                 <label className="text-[1.2rem]" htmlFor="name">
                   Email
@@ -44,10 +43,10 @@ export default function SignIn() {
             </form>
             <div>
               <p className="mt-3 text-[1.15rem]">
-              Don’t have an account?
-                <a className="text-main font-semibold ms-2" target="_blank" href="#">
+                Don’t have an account?
+                <Link to="/signup" className="text-main font-semibold ms-2">
                   Sign Up
-                </a>
+                </Link>
               </p>
             </div>
           </div>

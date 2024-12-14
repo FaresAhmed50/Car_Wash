@@ -39,7 +39,7 @@ export default function Navbar() {
 
               <div>
                   <button className={`px-4`}>
-                      <NavLink to={'signing'} >SIGN IN</NavLink>
+                      <NavLink to={'/'} >SIGN IN</NavLink>
                   </button>
                   <button >
                       <FontAwesomeIcon icon={faCartShopping} />
