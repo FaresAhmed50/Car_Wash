@@ -1,7 +1,10 @@
 
 import './App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';  
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'; 
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import Button from "./components/Button/Button.jsx";
+
+
 
 function App() {
 
@@ -9,11 +12,12 @@ function App() {
   return (
     <>
 
-    <h1>wdsffwq</h1>
-  
-  
+      <Button
+      text="Click Me!EEEEEEEEEEEE"
+      />
 
-      
+
+
     </>
   )
 }
