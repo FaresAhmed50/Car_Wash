@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Navbar() {
   return (
-      <nav className={' bg-transparent py-6'}>
+      <nav className={'p-4 bg-transparent fixed top-0 right-0 left-0 z-10'}>
           <div className={`container mx-auto flex flex-row items-center justify-around align-middle `}>
 
 
@@ -39,7 +39,7 @@ export default function Navbar() {
 
               <div>
                   <button className={`px-4`}>
-                      <NavLink to={'/'} >SIGN IN</NavLink>
+                      <NavLink to={'signing'} >SIGN IN</NavLink>
                   </button>
                   <button >
                       <FontAwesomeIcon icon={faCartShopping} />
