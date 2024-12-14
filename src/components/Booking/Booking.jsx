@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BookingCard from "../BookingCards/BookingCard.jsx";
 
 
@@ -7,13 +7,15 @@ export default function Booking() {
     {
       price: "39",
       billingCycle: "month",
-      title: "Basic License",
+      title: "Exterior Wash",
       features: [
-        { text: "Secure your customer usage", active: true },
-        { text: "View basic analytics", active: false },
-
-        { text: "Up to 350 customer profiles", active: false },
-        { text: "Custom network name", active: true },
+        { text: "Basic exterior cleaning", active: true },
+        { text: "Tire shine application", active: false },
+        { text: "Window cleaning (inside & outside)", active: false },
+        { text: "Deep interior vacuuming", active: false },
+        { text: "Dashboard wipe & detailing", active: false },
+        { text: "Carpet shampooing", active: false },
+        { text: "Factory finish guarantee", active: false },
       ],
       highlightColor: "text-yellow-400",
       buttonHoverBgColor: "hover:bg-yellow-400",
@@ -21,12 +23,15 @@ export default function Booking() {
     {
       price: "55",
       billingCycle: "month",
-      title: "Social License",
+      title: "Complete Wash",
       features: [
-        { text: "Secure your customer usage", active: true },
-        { text: "Up to 350 customer profiles", active: true },
-        { text: "View basic analytics", active: true },
-        { text: "Custom network name", active: false },
+        { text: "Basic exterior cleaning", active: true },
+        { text: "Tire shine application", active: true },
+        { text: "Window cleaning (inside & outside)", active: true },
+        { text: "Deep interior vacuuming", active: false },
+        { text: "Dashboard wipe & detailing", active: false },
+        { text: "Carpet shampooing", active: false },
+        { text: "Factory finish guarantee", active: false },
       ],
       highlightColor: "text-blue-400",
       buttonHoverBgColor: "hover:bg-blue-400",
@@ -34,12 +39,16 @@ export default function Booking() {
     {
       price: "99",
       billingCycle: "month",
-      title: "Marketing License",
+      title: "Full Detailing",
       features: [
-        { text: "Secure your customer usage", active: true },
-        { text: "Up to 350 customer profiles", active: false },
-        { text: "View basic analytics", active: true },
-        { text: "Custom network name", active: true },
+        { text: "Basic exterior cleaning", active: true },
+
+        { text: "Tire shine application", active: true },
+        { text: "Window cleaning (inside & outside)", active: true },
+        { text: "Deep interior vacuuming", active: true },
+        { text: "Dashboard wipe & detailing", active: true },
+        { text: "Carpet shampooing", active: false },
+        { text: "Factory finish guarantee", active: false },
       ],
       highlightColor: "text-green-400",
       buttonHoverBgColor: "hover:bg-green-400",
@@ -47,25 +56,64 @@ export default function Booking() {
     {
       price: "130",
       billingCycle: "month",
-      title: "Marketing License",
+      title: "Factory Reset",
       features: [
-        { text: "Secure your customer usage", active: true },
-        { text: "Up to 350 customer profiles", active: true },
-        { text: "View basic analytics", active: true },
-        { text: "Custom network name", active: true },
+        { text: "Basic exterior cleaning", active: true },
+        { text: "Tire shine application", active: true },
+        { text: "Window cleaning (inside & outside)", active: true },
+        { text: "Deep interior vacuuming", active: true },
+        { text: "Dashboard wipe & detailing", active: true },
+        { text: "Carpet shampooing", active: true },
+        { text: "Factory finish guarantee", active: true },
       ],
-      highlightColor: "text-green-400",
-      buttonHoverBgColor: "hover:bg-green-400",
+      highlightColor: "text-green-500",
+      buttonHoverBgColor: "hover:bg-green-500",
     },
-    
   ];
+  
 
-  const handleSelect = (planTitle) => {
-    alert(`Plan Selected: ${planTitle}`);
+  // adding to cart logic
+
+  const dummyUser = { id: "12345", name: "Test User",email:"examole@gmail.com", cart:[] };
+  // using dummy user till the user logic done 
+  const user = JSON.parse(localStorage.getItem("user")) || dummyUser;
+  const cartKey=`cart_${user.id}`
+  //====
+  // helper functions to be moved 
+
+  const loadCart = () => JSON.parse(localStorage.getItem(cartKey)) || [];
+  const saveCart = (cart) => {
+    localStorage.setItem(cartKey, JSON.stringify(cart));
+  };
+  const clearCart = () => {
+    localStorage.removeItem(cartKey);
+  };
+    
+
+  //============
+  const [cart , setCart]=useState(loadCart());
+
+
+  const handleSelect = (plan) => {
+    const currentCart = loadCart();
+    const updatedCart=[...currentCart];
+    const existingPlanIndex=updatedCart.findIndex((item)=>item.title===plan.title);
+    if(existingPlanIndex!==-1){
+      updatedCart[existingPlanIndex].quantity+=1;
+
+    }
+    else{
+      updatedCart.push({...plan,quantity:1})
+    }
+    setCart(updatedCart)
+    saveCart(updatedCart);
+    console.log("cart updated",updatedCart);
+    
   };
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-6  bg-black py-8">
+   <section className="pt-12">
+     <div className="flex flex-wrap items-center justify-center gap-6  bg-black py-8">
       {plans.map((plan, index) => (
         <BookingCard
           key={index}
@@ -75,9 +123,10 @@ export default function Booking() {
           features={plan.features}
           highlightColor={plan.highlightColor}
           buttonHoverBgColor={plan.buttonHoverBgColor}
-          onSelect={() => handleSelect(plan.title)}
+          onSelect={() => handleSelect(plan)}
         />
       ))}
     </div>
+   </section>
   );
 }

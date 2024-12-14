@@ -8,6 +8,7 @@ import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import SignUp from "./components/SignUp/SignUp.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 import Booking from './components/Booking/Booking.jsx';
+import Payment from './components/Payment/Payment.jsx';
 
 
 
@@ -23,6 +24,8 @@ function App() {
                 {path: 'home', element : <Home/> },
                 {path: 'booking' , element : <Booking/> },
                 {path: 'cart', element : <Cart/> },
+                {path: 'payment', element : <Payment/> },
+
                 {path: 'about-us', element : <AboutUs/> },
 
                 //Register routeing
