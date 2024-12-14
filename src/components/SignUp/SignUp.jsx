@@ -11,37 +11,48 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [users, setUsers] = useState([]);
 
-
+  function validation(email) {
+    for (let i = 0; i < users.length; i++) {
+      if (email == users[i].email) {
+        return false;
+      }
+    }
+    return true;
+  }
   function handleSubmit(e) {
     e.preventDefault();
-  
-    // Create a new user object
-    let user = {
-      name,
-      email,
-      password,
-      id: Date.now(),
-    };
-  
-    // Update the users state
-    setUsers((prev) => {
-      const updatedUsers = [...prev, user];
 
-      localStorage.setItem("Users", JSON.stringify(updatedUsers));
-      return updatedUsers;
-    });
-  
-    setName("");
-    setEmail("");
-    setPassword("");
+    if (validation(email)) {
+      let user = {
+        name,
+        email,
+        password,
+        id: Date.now(),
+      };
+
+      setUsers((prev) => {
+        const updatedUsers = [...prev, user];
+
+        localStorage.setItem("Users", JSON.stringify(updatedUsers));
+        return updatedUsers;
+      });
+
+      window.alert("You are registered successfully");
+
+      setName("");
+      setEmail("");
+      setPassword("");
+    }
+    else
+    {
+      window.alert("Email is already registered");
+    }
   }
-  
 
   return (
     <>
       <section className="bg-hero min-h-lvh relative text-white ps-[3rem] max-lg:ps-0">
         <div className="z-3 relative w-[8rem] py-7 max-lg:ps-[3rem]">
-          <img className="w-full" src={logo} alt="Logo" />
         </div>
 
         <div className="flex justify-center ">
@@ -50,7 +61,10 @@ export default function SignUp() {
               <h1 className="text-[5rem] font-heading">Sign Up</h1>
               <p className="text-[1.6rem]">Enter your credentials below.</p>
             </div>
-            <form action="" onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <form
+              action=""
+              className="flex flex-col gap-4"
+            >
               <div className="flex flex-col gap-2">
                 <label className="text-[1.2rem]" htmlFor="name">
                   Name
@@ -93,7 +107,7 @@ export default function SignUp() {
                   required
                 />
               </div>
-              <button className="bg-main py-3 rounded-md mt-2">Sign up</button>
+              <button onClick={handleSubmit} className="bg-main py-3 rounded-md mt-2">Sign up</button>
             </form>
             <div>
               <p className="mt-3 text-[1.15rem]">

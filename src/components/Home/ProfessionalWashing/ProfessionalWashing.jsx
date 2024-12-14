@@ -5,7 +5,7 @@ export default function ProfessionalWashing() {
     <section className="bg-black text-white  py-[5rem]">
       <div className="container mx-auto flex justify-between items-center gap-16 max-lg:flex-col px-3">
         <div className="w-1/2 max-lg:w-full max-lg:order-2">
-          <h2 className="text-[3rem] font-[900] w-[90%] mb-5 max-lg:text-[2.5rem]">
+          <h2 className="text-[3rem] font-[900] w-[90%] max-lg:text-[2rem] mb-5">
             Professional Washing And Cleaning.
           </h2>
           <p className="mb-5">

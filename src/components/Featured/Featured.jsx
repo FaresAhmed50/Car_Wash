@@ -10,7 +10,7 @@ import wind from "../../assets/images/wind.png"
 export default function Featured() {
   return (<>
 
-  <section>
+  <section className='bg-black'>
     <div className='container mx-auto py-[5rem] px-3 grid gap-6 grid-cols-4 max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3' >
       
         <FeatureCard imgSrc={snowflake} title= "Safety Materials" text="Cras aliquam tristique metus, eu gravida diam vestibulum gravida."/>

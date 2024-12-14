@@ -21,11 +21,9 @@ export default function SignIn() {
     {
       if(email == users[i].email && users[i].password == password)
       {
-        console.log("yes");
         navigate("/");
         localStorage.setItem("isLogged",true);
       }
-      
     }
 
   }
@@ -34,7 +32,7 @@ export default function SignIn() {
     <>
       <section className="bg-hero min-h-lvh relative text-white ps-[3rem] max-lg:ps-0 ">
         <div className="z-3 relative w-[8rem] py-7 max-lg:ps-[3rem]">
-          <img className="w-full" src={logo} alt="Logo" />
+
         </div>
 
         <div className="flex justify-center">
