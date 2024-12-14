@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import flowbitePlugin from "flowbite/plugin";
+
 export default {
   content: [
     "./index.html",
@@ -10,12 +12,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        nav: ["var(--font-nav)"], // Map the CSS variable to Tailwind's font utility
+        nav: ["var(--font-nav)"],
       },
       backgroundImage: {
         "card-dark": "linear-gradient(120deg, #202020 0%, #050505 100%)",
       },
     },
   },
-  plugins: [require("flowbite/plugin")],
+  plugins: [flowbitePlugin],
 };
