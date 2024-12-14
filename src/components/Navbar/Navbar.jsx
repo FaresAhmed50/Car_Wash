@@ -9,7 +9,7 @@ export default function Navbar() {
 
   function handleLogout() {
     localStorage.removeItem("isLogged");
-    navigate("/signin");
+    navigate("/");
   }
 
   return (
@@ -19,17 +19,17 @@ export default function Navbar() {
       <nav className=" absolute w-full z-20 top-0 start-0 text-white py-5 max-md:bg-black">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link
-            to={"/"}
+            to={"/home"}
             className="self-center font-semibold whitespace-nowrap text-[1.2rem] font-heading"
           >
-            Vroon Verse
+            VroomVerse
           </Link>
 
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <div>
               {!localStorage.getItem("isLogged") ? (
                 <button className={`px-4`}>
-                  <NavLink to={"signin"}>SIGN IN</NavLink>
+                  <NavLink to={"/"}>SIGN IN</NavLink>
                 </button>
               ) : (
                 <button onClick={handleLogout} className={`px-4`}>
@@ -37,11 +37,13 @@ export default function Navbar() {
                 </button>
               )}
 
-              <button>
+              {localStorage.getItem("isLogged") ? <button>
                 <NavLink to={'/cart'}>
                   <FontAwesomeIcon icon={faCartShopping} />
                 </NavLink>
-              </button>
+              </button>:null}
+
+              
             </div>
 
             <button
@@ -75,7 +77,7 @@ export default function Navbar() {
           >
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
               <li>
-                <NavLink to={"/"} className="block py-2 px-3 text-[1.2rem]" aria-current="page">
+                <NavLink to={"/home"} className="block py-2 px-3 text-[1.2rem]" aria-current="page">
                   Home
                 </NavLink>
               </li>
@@ -87,14 +89,16 @@ export default function Navbar() {
                   Booking
                 </NavLink>
               </li>
-              <li>
+
+              {localStorage.getItem("isLogged") ?   <li>
                 <NavLink
                   to={"/cart"}
                   className="block py-2 px-3 text-[1.2rem]"
                 >
                   Cart
                 </NavLink>
-              </li>
+              </li>:null }
+           
             </ul>
           </div>
         </div>

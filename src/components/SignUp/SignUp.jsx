@@ -108,7 +108,7 @@ export default function SignUp() {
             <div>
               <p className="mt-3 text-[1.15rem]">
                 Already have an account?{" "}
-                <Link to="/signin" className="text-main font-semibold ms-2">
+                <Link to="/" className="text-main font-semibold ms-2">
                   Login
                 </Link>
               </p>

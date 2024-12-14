@@ -11,6 +11,8 @@ import Booking from './components/Booking/Booking.jsx';
 import Payment from './components/Payment/Payment.jsx';
 import { initFlowbite } from 'flowbite';
 import { useEffect } from 'react';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
+
 
 
 function App() {
@@ -28,17 +30,16 @@ function App() {
             path: '',
             element: <LayOut />,
             children: [
-                { index: true, element: <Home /> }, // Main components
-                { path: 'booking', element: <Booking /> },
-                { path: 'cart', element: <Cart /> },
-                { path: 'about-us', element: <AboutUs /> },
-                { path: 'payment', element: <Payment /> },
+                { path: "home", element:<ProtectedRoute><Home /></ProtectedRoute>  }, // Main components
+                { path: 'booking', element: <ProtectedRoute><Booking /></ProtectedRoute>  },
+                { path: 'cart', element: <ProtectedRoute><Cart /></ProtectedRoute>  },
+                { path: 'payment', element: <ProtectedRoute><Payment /> </ProtectedRoute> },
 
                 { path: '*', element: <NotFound /> }, // Not Found page
             ],
         },
         // Routes outside the main layout
-        { path:"signin", element: <SignIn /> },
+        { index:true, element: <SignIn /> },
         { path: 'signup', element: <SignUp /> },
     ]);
 

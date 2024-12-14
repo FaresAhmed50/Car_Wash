@@ -26,7 +26,7 @@ export default function SignIn() {
       localStorage.setItem("isLogged", "true");
 
       
-      navigate("/");
+      navigate("/home");
     } else {
     
       alert("Invalid email or password. Please try again.");
