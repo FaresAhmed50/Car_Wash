@@ -64,7 +64,7 @@ This project is a **modern, responsive car wash and detailing service website**,
 ```sh
   npm run dev
 ```
-The website will be available at **http://localhost:3000**.
+The website will be available at **[https://car-wash-m17c6xjt3-fares-projects-4d21138c.vercel.app/]**.
 
 ## 📞 Contact
 For any inquiries or support, reach out via **[Your Contact Info]**.
